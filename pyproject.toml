@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "python-template"
+name = "video-capture-bot"
 version = "0.1.0" # After updated your version, you have to run `poetry install` again.
 description = "Your project description."
 authors = ["Python Template <python.template@example.com>"]
