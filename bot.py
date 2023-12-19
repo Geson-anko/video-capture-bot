@@ -37,8 +37,8 @@ class Args:
     # Video Configurations.
     video_duration: float = 30  # [sec]
     """Length of video [seconds], default is 30 secs."""
-    capture_interval: float = 60 * 30  # [sec]
-    """Interval for next capture. default is 60 mins."""
+    capture_interval: float = 45 * 60  # [sec]
+    """Interval for next capture. default is 45 mins."""
     video_width: int = 1280
     """Width of video."""
     video_height: int = 720
