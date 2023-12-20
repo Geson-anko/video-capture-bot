@@ -47,12 +47,6 @@ class Args:
     """Bitrate of video."""
 
 
-# def get_discord_client() -> discord.Client:
-#     intents = discord.Intents.default()
-#     intents.message_content = True
-#     return discord.Client(intents=intents)
-
-
 def convert_video(input_path: str, output_path: str, resolution: tuple[int, int], bitrate: str) -> None:
     (
         ffmpeg.input(input_path)
