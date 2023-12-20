@@ -88,6 +88,9 @@ class Bot(discord.Client):
         video_path_for_post = str(get_temp_video_path())
         channel = self.get_channel(int(os.environ["DISCORD_POST_CHANNEL_ID"]))
 
+        if channel is None:
+            raise RuntimeError("Specified channel id does not exists!")
+
         while True:
             current_time = datetime.now().strftime(self.args.date_format)
             logger.info(f"Start recording...: {current_time}")
