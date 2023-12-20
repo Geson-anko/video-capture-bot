@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "video-recording-bot"
 version = "0.1.0" # After updated your version, you have to run `poetry install` again.
-description = "Your project description."
-authors = ["Python Template <python.template@example.com>"]
+description = "Discord bot that regularly shoots videos and posts them to the Discord channel."
+authors = ["Geson-anko <59220704+Geson-anko@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]

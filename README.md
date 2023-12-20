@@ -50,3 +50,7 @@ BOTのトークンなどの機密情報を漏洩しないために、`.env`フ�
 
 1. `poetry shell`をこのプロジェクトのディレクトリで実行する。
 2. `python bot.py --post-message "Hello, I'm Video Recording BOT!"`
+
+### コマンドライン引数
+
+全てのコマンド引数のリストは `python bot.py -h`を実行してください。
