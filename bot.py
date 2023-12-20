@@ -13,7 +13,7 @@ import tyro
 from discord.flags import Intents
 from dotenv import load_dotenv
 
-from video_capture_bot.obs_client import ObsClient
+from video_recording_bot.obs_client import ObsClient
 
 logger = logging.getLogger(__name__)
 
@@ -37,8 +37,8 @@ class Args:
     # Video Configurations.
     video_duration: float = 30  # [sec]
     """Length of video [seconds], default is 30 secs."""
-    capture_interval: float = 45 * 60  # [sec]
-    """Interval for next capture. default is 45 mins."""
+    recording_interval: float = 45 * 60  # [sec]
+    """Interval for next recording. default is 45 mins."""
     video_width: int = 1280
     """Width of video."""
     video_height: int = 720
@@ -91,7 +91,7 @@ class Bot(discord.Client):
         while True:
             current_time = datetime.now().strftime(self.args.date_format)
             logger.info(f"Start recording...: {current_time}")
-            video_path = await self.obs_client.capture(self.args.video_duration)
+            video_path = await self.obs_client.record(self.args.video_duration)
             logger.info("End recording.")
             message = f"{args.post_message}\nRecording start time: {current_time}"
 
@@ -108,7 +108,7 @@ class Bot(discord.Client):
 
             if (
                 wait_time := (
-                    self.args.capture_interval - self.obs_client.wait_time_after_stop - self.args.video_duration
+                    self.args.recording_interval - self.obs_client.wait_time_after_stop - self.args.video_duration
                 )
             ) > 0:
                 await asyncio.sleep(wait_time)

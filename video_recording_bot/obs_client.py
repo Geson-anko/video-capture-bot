@@ -12,14 +12,14 @@ class ObsClient(obs.ReqClient):
         super().__init__(**kwargs)
         self.wait_time_after_stop = wait_time_after_stop
 
-    async def capture(self, duration: float) -> str:
-        """Capture video for `duration`.
+    async def record(self, duration: float) -> str:
+        """Recording video for `duration`.
 
         Args:
             duration: video length [seconds].
 
         Returns:
-            captured_video_path:
+            recorded_video_path:
         """
 
         self.start_record()
